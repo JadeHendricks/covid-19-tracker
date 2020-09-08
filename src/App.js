@@ -3,6 +3,7 @@ import axios from 'axios';
 import InfoBox from './components/InfoBox';
 import Map from './components/Map';
 import Table from './components/Table';
+import LineGraph from './components/LineGraph';
 import { sortData } from './utils';
 import './App.css';
 import {
@@ -79,6 +80,7 @@ function App() {
           <Table countries={ tableData } />
           <h3>Worldwide new cases</h3>
         </CardContent>
+        <LineGraph />
       </Card>
     </div>
   );
