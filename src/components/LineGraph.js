@@ -48,17 +48,17 @@ const options = {
     }
 }
 
-const LineGraph = () => {
+const LineGraph = ({ casesType }) => {
 
     const [data, setData] = useState({});
 
     useEffect(() => {
         getHistorical();
-    }, [])
+    }, [casesType])
 
     const getHistorical = async () => {
         const response = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=120');
-        const chartData = buildChartData(response.data);
+        const chartData = buildChartData(response.data, casesType);
         setData(chartData);
     }
 
